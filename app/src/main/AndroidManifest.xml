@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MusicStream"
         tools:targetApi="31">
         <activity
+            android:name=".PlayerActivity"
+            android:exported="false" />
+        <activity
             android:name=".SongsListActivity"
             android:exported="false" />
         <activity
