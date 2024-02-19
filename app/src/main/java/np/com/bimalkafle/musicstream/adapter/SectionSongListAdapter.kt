@@ -11,13 +11,14 @@ import com.google.firebase.firestore.FirebaseFirestore
 import np.com.bimalkafle.musicstream.MyExoplayer
 import np.com.bimalkafle.musicstream.PlayerActivity
 import np.com.bimalkafle.musicstream.SongsListActivity
+import np.com.bimalkafle.musicstream.databinding.SectionSongListRecyclerRowBinding
 import np.com.bimalkafle.musicstream.databinding.SongListItemRecyclerRowBinding
 import np.com.bimalkafle.musicstream.models.SongModel
 
-class SongsListAdapter(private  val songIdList : List<String>) :
-    RecyclerView.Adapter<SongsListAdapter.MyViewHolder>() {
+class SectionSongListAdapter(private  val songIdList : List<String>) :
+    RecyclerView.Adapter<SectionSongListAdapter.MyViewHolder>() {
 
-    class MyViewHolder(private val binding: SongListItemRecyclerRowBinding) : RecyclerView.ViewHolder(binding.root){
+    class MyViewHolder(private val binding: SectionSongListRecyclerRowBinding) : RecyclerView.ViewHolder(binding.root){
         //bind data with view
         fun bindData(songId : String){
 
@@ -44,7 +45,7 @@ class SongsListAdapter(private  val songIdList : List<String>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = SongListItemRecyclerRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = SectionSongListRecyclerRowBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return MyViewHolder(binding)
     }
 
